@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="login-form">
+    <div class="main-div" style="max-width: 100%;margin:0px auto !important;">
+      <form id="Login" class="text-left" *ngIf="user">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <h2>Exam System</h2>
+            <h3>Student Information</h3>
+            <table class="table table-bordered table-stripped">
+              <thead>
+                <tr>
+                  <th *ngFor="let key of getKeys(user)">
+                    {{key | titlecase}}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td *ngFor="let key of getKeys(user)">
+                    {{user[key]}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>Exam Result</h3>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Total Question </th>
+                  <td> {{questions.length}} </td>
+                </tr>
+                <tr class="text-success">
+                  <th>Correct Aswer </th>
+                  <td> {{correctAnswers}} </td>
+                </tr>
+                <tr class="text-danger">
+                  <th> Wrong Answer </th>
+                  <td> {{wrongAnswers}} </td>
+                </tr>
+              </thead>
+            </table>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

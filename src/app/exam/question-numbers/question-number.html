@@ -1,0 +1,25 @@
+<div class="row">
+        <div class="col-md-2" *ngFor="let item of arrayOne(totalQuestions); let i = index">
+            <button type="button" class='btn btn-default'
+                [class.btn-primary]="selectedQuestionIndex.valueOf() == i"
+                (click)="questionIndexChanged(i)">
+                {{i+1}}
+            </button>
+        </div> 
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-4">
+          <button id="btn-default" type="button" class="btn btn-default text-dark mt-150"
+          [disabled]="selectedQuestionIndex == 0"
+          (click)="previousQuestion()">Prev</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary mt-150"
+            [disabled]="selectedQuestionIndex.valueOf() == (totalQuestions.valueOf() - 1)"
+            (click)="nextQuestion()">Next</button>
+        </div>
+        <div class="col-md-4">
+            <a type="button" class="btn btn-danger mt-150"
+            (click)="finishExam()">Finish</a>
+        </div>
+    </div>

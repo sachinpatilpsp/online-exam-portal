@@ -1,0 +1,35 @@
+[
+    {
+        "id":1,
+        "question" : "What is JavaScript?",
+        "options" : [
+            {"id":1, "name" : "Web Framework" },
+            { "id":2, "name" : "Scripting Laguage" },
+            { "id":3, "name" : "Java Programming Laguange" },
+            { "id":4, "name" : "Development framework" }
+        ],
+        "answer" : "Scripting Laguage"
+    },
+    {
+        "id":2,
+        "question" : "What is Java?",
+        "options" : [
+            {"id":1, "name" : "Web Framework" },
+            { "id":2, "name" : "Scripting Laguage" },
+            { "id":3, "name" : "Java Programming Laguange" },
+            { "id":4, "name" : "Development framework" }
+        ],
+        "answer" : "Java Programming Laguange"
+    },
+    {
+        "id":2,
+        "question" : "What is Bytecode in Java?",
+        "options" : [
+            {"id":1, "name" : "Intermidate code" },
+            { "id":2, "name" : "Binary code" },
+            { "id":3, "name" : "Unerstandable to JVM" },
+            { "id":4, "name" : ".class file" }
+        ],
+        "answer" : "Unerstandable to JVM"
+    }
+]

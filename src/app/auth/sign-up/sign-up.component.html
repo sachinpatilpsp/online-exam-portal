@@ -1,0 +1,128 @@
+<div id="LoginForm">
+  <div class="container">
+    <div class="login-form">
+      <div class="main-div" style="max-width: 80%;">
+        <div class="panel">
+          <h1>Exam System - Signup</h1>
+          <p>Please register you personal details</p>
+        </div>
+
+        <form id="Login" [formGroup]="signUpForm">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="inputName" placeholder="Enter Name" formControlName="name">
+                <div *ngIf="name.errors && (name.invalid && name.touched)" class="text-danger text-left">
+                  <span *ngIf="name.errors?.required">Please enter name</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="inputContact" placeholder="Enter Contact Number"
+                  formControlName="contactNumber">
+                <div *ngIf="contactNumber.errors && (contactNumber.invalid && contactNumber.touched)"
+                  class="text-danger text-left">
+                  <span *ngIf="contactNumber.errors?.required">Please enter contact number</span>
+                  <span *ngIf="contactNumber.errors?.pattern">Please enter valid contact number</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Enter Email Address"
+                  formControlName="email">
+                <div *ngIf="email.errors && (email.invalid && email.touched)" class="text-danger  text-left">
+                  <span *ngIf="email.errors?.required">Please enter email address</span>
+                  <span *ngIf="email.errors?.pattern">Please enter valid email address</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Enter Password"
+                  formControlName="password">
+                <div *ngIf="password.errors && (password.invalid && password.touched)" class="text-danger text-left">
+                  Please enter password
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" style="height: calc(3.0rem + 2px);" formControlName="gender">
+                  <option disabled>Select Gender </option>
+                  <option value="Male">Male </option>
+                  <option value="Female">Female </option>
+                </select>
+                <div *ngIf="gender.errors && (gender.invalid && gender.touched)" class="text-danger text-left">
+                  Please select gender
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" style="height: calc(3.0rem + 2px);" formControlName="college">
+                  <option disabled>Select College </option>
+                  <option *ngFor="let college of colleges" [ngValue]="college.name">{{college.name}}</option>
+                </select>
+                <div *ngIf="college.errors && (college.invalid && college.touched)" class="text-danger text-left">
+                  Please select college
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" style="height: calc(3.0rem + 2px);" formControlName="qualification">
+                  <option disabled>Select Qualification </option>
+                  <option value="BSc">BSc </option>
+                  <option value="Diploma">Diploma </option>
+                  <option value="B.E.">B.E. </option>
+                </select>
+                <div *ngIf="qualification.errors && (qualification.invalid && qualification.touched)"
+                  class="text-danger text-left">
+                  Please select qualification
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control" style="height: calc(3.0rem + 2px);" formControlName="stream">
+                  <option disabled>Select Stream </option>
+                  <option value="CS">CS </option>
+                  <option value="IT">IT </option>
+                </select>
+                <div *ngIf="stream.errors && (stream.invalid && stream.touched)" class="text-danger text-left">
+                  Please select stream
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+              <input type="submit" class="btn btn-primary" value="Signup" (click)="signUp(signUpForm)">
+            </div>
+            <!-- <div class="col-md-4">
+              already have an account ? <a routerLink="/sign-in">Login</a>
+            </div> -->
+          </div>          
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
